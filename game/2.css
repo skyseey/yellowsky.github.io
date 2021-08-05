@@ -1,0 +1,98 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, 
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+html,body {
+    height: 100%;
+    overflow: hidden;
+    -webkit-touch-callout:none; /*系统默认菜单被禁用*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -khtml-user-select:none; /*早期浏览器*/
+    -moz-user-select:none;/*火狐*/
+    -ms-user-select:none; /*IE10*/
+    user-select:none;
+}
+
+html,body{height: 100%;}
+body{overflow: hidden;}
+img{display: block;}
+
+img.hotdog{
+    width: 35px;
+    position: absolute;
+    visibility: hidden;
+}
+
+img.sc{
+    width: 75px;
+    position: absolute;
+    /* left: 0px; */
+    top: 867px;
+}
+
+
+p.countdown{
+    border: 3px solid black;
+    color: black;
+    font-size: 37px;
+    position: absolute;
+    right: 3px;
+    z-index: 1;
+}
+
+p.dog{
+    border: 3px solid black;
+    color: black;
+    font-size: 37px;
+    position: absolute;
+    left: 176px;
+    z-index: 1;
+}
+
+p.time{
+    border: 3px solid black;
+    color: black;
+    font-size: 37px;
+    position: absolute;
+    left: 3px;
+    z-index: 1;
+}
+
+.show-score{position: fixed; z-index: 2; width: auto; height: 20px; text-align: center; left: 50px; bottom: 70px; font-weight: 700; font-size: 18px; animation:scale 1s ease;}
+
+@keyframes scale
+{
+    0%   {transform: scale(0.8)}
+    50%  {transform: scale(1.5)}
+    100% {transform: scale(1)}
+}
+
+
+
+.play-panel {display:none; width: 250px;height: 180px;border: solid 2px black;position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);text-align: center}
+.play-panel .start {display:none;}
+.play-panel .start .btn {border:solid 2px black; display: inline-block; padding: 10px;font-weight: 700;margin-top:65px;}
+.play-panel .start .btn:hover {cursor: pointer; color: yellow; background-color: #000;}
+.play-panel .stop {display:none;}
+.play-panel .title,.score {font-weight: 700;font-size: 26px;margin:15px 0px;}
+.play-panel .stop .btn {border:solid 2px black; display: inline-block; padding: 10px;font-weight: 700;}
+.play-panel .stop .btn:hover {cursor: pointer; color: yellow; background-color: #000;}
+
+
