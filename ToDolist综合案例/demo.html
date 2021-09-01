@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<style type="text/css">
+	ul li { list-style: none; }
+	.main { width: 100%; display: flex; align-items: center; justify-content: center; margin: 15px 0px;}
+	.cc { float: right; }
+	td { display: flex; align-items: center; justify-content: space-between; padding: 5px 20px !important; }
+    show{display: block;}
+</style>
+<body>
+	<div class="container" id="app">
+		<h1 style="text-align: center;">YSkyToDoList</h1>
+		<div class="main">
+			<div class="left">
+				 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入内容" v-model="qq">
+			</div>
+             <div class="right">
+             	 <!-- 添加 -->
+				<button type="button" class="btn btn-primary" @click="loginFn">添加</button>
+             </div>
+		</div>
+        <div style="text-align: center; margin-bottom: 10px;">
+            <button class="btn btn-primary" style="width: 100px;" @click="change">change</button>
+        </div>
+		<table class="table table-condensed">
+			<tr v-bind:style="show">
+		      <td class="active" v-for="(item,index) in lists">
+			     {{item.name}}
+			      <button type="button" class="btn btn-default cc" @click="delFn(index)">
+			      删除
+			      </button>
+			  </td>
+			</tr>
+		</table>
+	</div>
+	
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		alert("welcome to ...");
+	const vm = new Vue({
+		el: "#app",
+		data: {
+			lists: [
+		 	  {name: '吃饭'},
+		  	  {name: '睡觉'},
+			  {name: '挤痘痘'},
+			  {name: '抠脚'},
+			  {name: '扣鼻'}
+			],
+            qq:"",
+            show:{display:" table-row"},
+		},
+        methods: {
+            // 添加log
+            loginFn(){
+                if(this.qq != ""){
+                    let resentdata ={name:this.qq};
+                    this.lists.push(resentdata);
+                }else{
+                    alert("请输入才能添加");
+                }
+				this.qq=""
+            },
+            // 删除log
+            delFn(index){
+                // console.log(index);
+                this.lists.splice(index,1);
+            },
+            // 切换
+            change(){
+                this.show.display == " table-row"?this.show.display="none":this.show.display = " table-row";
+            }
+        }
+	})
+	</script>
+</body>
+</html>
